@@ -20,7 +20,7 @@ public class Main {
 	        System.out.println(in.readUTF());
 	        System.out.println(in.readUTF());
 	        while(true);
-	        //ListenTo.close();
+	        ListenTo.close();
 		} 	
 		catch (IOException e) 
 		{
