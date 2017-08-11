@@ -1,13 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane prefHeight="354.0" prefWidth="509.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.SampleController">
-   <center>
-      <Button mnemonicParsing="false" onMouseClicked="#helloworld" text="Button" textFill="#ee0c0c" BorderPane.alignment="CENTER" />
-   </center>
-</BorderPane>
+<AnchorPane depthTest="DISABLE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../AppBackGround.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b52121" height="155.0" layoutX="391.0" layoutY="147.0" strokeType="INSIDE" width="176.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#a43d3d" />
+                  <Stop color="#050101" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Rectangle>
+      <TextField fx:id="userName" layoutX="404.0" layoutY="168.0" promptText="Username" />
+      <PasswordField fx:id="Password" layoutX="404.0" layoutY="223.0" promptText="Password" />
+      <Button layoutX="456.0" layoutY="259.0" mnemonicParsing="false" onMousePressed="#Login" text="Login" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b52121" height="348.0" layoutX="14.0" layoutY="26.0" strokeType="INSIDE" width="352.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#a43d3d" />
+                  <Stop color="#050101" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Rectangle>
+      <Text fx:id="bhmed" layoutX="131.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Latest News" textAlignment="CENTER" underline="true">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
