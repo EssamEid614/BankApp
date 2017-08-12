@@ -9,24 +9,32 @@ public class Main {
 
 	public static void main(String[] args)
 	{
+		ServerSocket serverSocket = null;
+		 try
+		 {
+	       serverSocket = new ServerSocket(6606);
+	     } 
+		 catch (IOException e)
+		 {
+	            System.err.println("Could not listen on port: 2343");
+	     }
+		 while(true)
+		 {
+			 Socket NewClientArrived;
+			try 
+			{
+				System.out.println("Waiting for Connection on port 6606 ");
+				NewClientArrived = serverSocket.accept();
+				Server t = new Server(NewClientArrived);
+				t.start();
+			}
+			catch (IOException e) 
+			{
+				e.printStackTrace();
+			}
+			 
+		 }
 		
-		System.out.println("Waiting for Connection ..");
-		try
-		{
-			ServerSocket ListenTo = new ServerSocket(6606);
-			ListenTo.setSoTimeout(10000);
-			Socket socket = ListenTo.accept();
-			DataInputStream in = new DataInputStream(socket.getInputStream());
-	        System.out.println(in.readUTF());
-	        System.out.println(in.readUTF());
-	        while(true);
-	        ListenTo.close();
-		} 	
-		catch (IOException e) 
-		{
-			System.out.println("an error occured");
-			e.printStackTrace();
-		}
 	}
 	
 }
